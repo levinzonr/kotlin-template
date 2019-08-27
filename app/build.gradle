@@ -15,7 +15,7 @@ android {
         minSdkVersion sdks.minSdkVersion
         targetSdkVersion sdks.targetSdkVersion
         multiDexEnabled true
-        versionCode 1
+        versionCode 2
         versionName "2.0.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -35,13 +35,12 @@ android {
     }
 
     // Uncomment the following if you include signingConfigs
-    /*
     signingConfigs {
         staging {
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-            storeFile file('debug.keystore')
-            storePassword 'android'
+            keyAlias 'key0'
+            keyPassword '123123'
+            storeFile file('../staging.keystore')
+            storePassword '123123'
         }
         production {
             keyAlias 'androiddebugkey'
@@ -50,12 +49,11 @@ android {
             storePassword 'android'
         }
     }
-    */
 
     buildTypes {
         debug {
             // uncomment the following line if you add a flavorbased signingConfig for debug builds
-            //signingConfig null
+            signingConfig null
         }
         release {
             buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
@@ -68,7 +66,7 @@ android {
         staging {
             dimension "default"
             applicationIdSuffix ".staging"
-            //signingConfig signingConfigs.staging
+            signingConfig signingConfigs.staging
             deploy = "debug"
             hockeyAppId = ""
             manifestPlaceholders = [
@@ -80,7 +78,7 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ".production"
-            //signingConfig signingConfigs.production
+            // signingConfig signingConfigs.production
             deploy = "release"
             hockeyAppId = ""
             manifestPlaceholders = [
