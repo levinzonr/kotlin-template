@@ -68,9 +68,7 @@ android {
             applicationIdSuffix ".staging"
             signingConfig signingConfigs.staging
             deploy = "debug"
-            hockeyAppId = ""
             manifestPlaceholders = [
-                    HOCKEYAPP_APP_ID: hockeyAppId,
                     APP_NAME        : "KotlinTemplateStaging"
             ]
             buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
@@ -80,9 +78,7 @@ android {
             applicationIdSuffix ".production"
             // signingConfig signingConfigs.production
             deploy = "release"
-            hockeyAppId = ""
             manifestPlaceholders = [
-                    HOCKEYAPP_APP_ID: hockeyAppId,
                     APP_NAME        : "KotlinTemplate"
             ]
             buildConfigField "String", "API_URL", "\"https://jsonplaceholder.typicode.com\""
