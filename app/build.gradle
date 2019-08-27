@@ -15,7 +15,7 @@ android {
         minSdkVersion sdks.minSdkVersion
         targetSdkVersion sdks.targetSdkVersion
         multiDexEnabled true
-        versionCode 2
+        versionCode 3
         versionName "2.0.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -43,10 +43,10 @@ android {
             storePassword '123123'
         }
         production {
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-            storeFile file('debug.keystore')
-            storePassword 'android'
+            keyAlias 'key0'
+            keyPassword '123123'
+            storeFile file('../production.keystore')
+            storePassword '123123'
         }
     }
 
@@ -76,7 +76,7 @@ android {
         production {
             dimension "default"
             applicationIdSuffix ".production"
-            // signingConfig signingConfigs.production
+            signingConfig signingConfigs.production
             deploy = "release"
             manifestPlaceholders = [
                     APP_NAME        : "KotlinTemplate"

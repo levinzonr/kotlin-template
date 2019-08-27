@@ -6,7 +6,6 @@ import android.os.Bundle
 import dk.nodes.template.presentation.R
 import dk.nodes.template.presentation.extensions.observeNonNull
 import dk.nodes.template.presentation.ui.base.BaseActivity
-import net.hockeyapp.android.UpdateManager
 
 class MainActivity : BaseActivity() {
 
@@ -25,12 +24,6 @@ class MainActivity : BaseActivity() {
         viewState.nstackMessage?.let { showMessageDialog(it) }
         viewState.nstackRateReminder?.let { showRateReminderDialog(it) }
         viewState.nstackUpdate?.let { showChangelogDialog(it) }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        // If we checked for hockey updates, unregister
-        UpdateManager.unregister()
     }
 
     companion object {
