@@ -15,8 +15,8 @@ android {
         minSdkVersion sdks.minSdkVersion
         targetSdkVersion sdks.targetSdkVersion
         multiDexEnabled true
-        versionCode 12
-        versionName "2.0.12"
+        versionCode 20
+        versionName "2.0.20"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         compileOptions {
